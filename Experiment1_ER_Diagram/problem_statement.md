@@ -53,7 +53,7 @@ Design a database for patient management, appointments, medical records, and bil
 
 ## Scenario Chosen:
 
-##### Hospital 
+### Hospital 
 
 ## ER Diagram:
 
