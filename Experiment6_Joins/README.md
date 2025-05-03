@@ -51,42 +51,74 @@ FROM table1
 FULL OUTER JOIN table2
 ON table1.column = table2.column;
 ```
+#### SUBMISSION
+
+Rakshitha J - 212223240135
 
 **Question 1**
 --
--- Paste Question 1 here
+![Screenshot 2025-05-03 115259](https://github.com/user-attachments/assets/8398610f-fd62-45cc-94a4-248b47a69468)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT 
+    o.ord_no,
+    o.purch_amt,
+    o.ord_date,
+    c.cust_name,
+    c.city AS customer_city,
+    c.grade,
+    s.name AS salesman_name,
+    s.city AS salesman_city,
+    s.commission
+FROM 
+    orders o
+JOIN 
+    customer c ON o.customer_id = c.customer_id
+JOIN 
+    salesman s ON o.salesman_id = s.salesman_id;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/6b57727a-4733-4907-a086-8ad26a6210dd)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/a3b6d85d-4972-471d-8c37-4b8599ab2925)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT 
+    c.cust_name,
+    s.commission
+FROM 
+    customer c
+LEFT JOIN 
+    salesman s ON c.salesman_id = s.salesman_id;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/65122ce3-e41c-4654-88dd-8e46a3dd70cc)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/9d42b1cb-0ae1-45ea-8499-bc67bcfdf785)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT 
+    p.first_name,
+    s.*
+FROM 
+    patients p
+INNER JOIN 
+    surgeries s ON p.patient_id = s.patient_id
+WHERE 
+    p.date_of_birth > '1990-01-01';
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/4070162c-ffa4-46bc-818d-125405f6784f)
 
 **Question 4**
 ---
