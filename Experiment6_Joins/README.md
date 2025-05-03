@@ -122,88 +122,156 @@ WHERE
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/097ac2df-639e-4f9a-b63b-5bb4857ca6e9)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT 
+    o.ord_no,
+    o.ord_date,
+    o.purch_amt,
+    c.cust_name AS "Customer Name",
+    c.grade,
+    s.name AS "Salesman",
+    s.commission
+FROM 
+    orders o
+JOIN 
+    customer c ON o.customer_id = c.customer_id
+JOIN 
+    salesman s ON o.salesman_id = s.salesman_id;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/b955516a-4a9c-4d8f-a5b6-ac47fdacae63)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/0adb7085-5670-4066-a045-aced59785bfd)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT 
+    c.cust_name AS "Customer Name",
+    c.city,
+    s.name AS "Salesman",
+    s.commission
+FROM 
+    customer c
+JOIN 
+    salesman s ON c.salesman_id = s.salesman_id;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/b2f7faf5-22a5-4a5e-adac-92e2f792b694)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/b7d17e37-bbb4-4f00-b7a2-8387c96ac365)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT 
+    s.name AS Salesman,
+    c.cust_name AS cust_name,
+    s.city
+FROM 
+    salesman s
+JOIN 
+    customer c ON s.city = c.city;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/1ad6a5d7-551d-4488-94ec-aff5da67d6f6)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/31ca45d7-7c78-430e-9969-648f88737bab)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT 
+    p.first_name AS patient_name,
+    d.first_name AS doctor_name
+FROM 
+    patients p
+INNER JOIN 
+    doctors d ON p.doctor_id = d.doctor_id
+WHERE 
+    p.discharge_date IS NULL;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/4f612d0f-4cfc-464e-a5fd-f554f0ca7ebb)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/3805d112-16db-475e-81dd-39f3da1243e9)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT 
+    t.*
+FROM 
+    test_results t
+INNER JOIN 
+    patients p ON t.patient_id = p.patient_id
+WHERE 
+    p.first_name = 'Alice';
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/023d6bc0-d983-4952-908c-6f841fe7d9a1)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/f8357338-9f0c-47d7-a1e1-1c526a0ea990)
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT 
+    c.*
+FROM 
+    customer c
+LEFT JOIN 
+    orders o ON c.customer_id = o.customer_id
+WHERE 
+    o.ord_date BETWEEN '2012-08-01' AND '2012-08-30';
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/9e695eb1-99b0-4f63-927b-2a61c6d0b265)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/968f400b-1d26-414c-a19c-34c2b8bd97e2)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT 
+    c.cust_name,
+    c.city AS city,
+    c.grade,
+    s.name AS Salesman,
+    s.city AS city
+FROM 
+    customer c
+JOIN 
+    salesman s ON c.salesman_id = s.salesman_id
+WHERE 
+    c.grade < 300
+ORDER BY 
+    c.customer_id ASC;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/8ad874f0-6185-4527-aca7-9d5bfbd64f98)
 
+
+## Module - 5 Grade :
+
+![image](https://github.com/user-attachments/assets/d831bc83-4ae3-4b1b-9824-a65c6e4bf2bb)
 
 ## RESULT
 Thus, the SQL queries to implement different types of joins have been executed successfully.
